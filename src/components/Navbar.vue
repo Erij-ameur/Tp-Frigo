@@ -5,7 +5,7 @@
     <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <router-link to="/" class="nav-link">Home</router-link>
+          <router-link to="/Home" class="nav-link">Home</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/AjoutPage" class="nav-link">Add</router-link>
@@ -20,6 +20,5 @@
 </script>
   
 <style scoped>
-/* Styles spécifiques au composant si nécessaire */
 </style>
   

@@ -1,14 +1,14 @@
-
 <template>
+   <img class="background-image" src="../assets/tm1d_zvj6_220304.jpg" alt="Background Image">
   <div class="mt-5">
     <SearchForm @search="updateSearchCriteria"></SearchForm>
     <div v-if="listeElement.length === 0">
       Loading...
     </div>
     <div v-else>
-      <div v-if="Searchliste.length === 0" class=" mx-4 d-flex flex-wrap">
+      <div v-if="Searchliste.length === 0" class=" my-3 mx-4 d-flex flex-wrap ">
         <ElementCardItem v-for="element in listeElement" :key="element.id" :element="element"
-          :onS="onSupprimer" class="m-2" />
+          :onS="onSupprimer" class="mx-2 my-3" />
       </div>
       <div v-else class="d-flex flex-wrap">
         <ElementCardItem v-for="element in Searchliste" :key="element.id" :element="element" 
@@ -64,7 +64,7 @@ function onSupprimer(id) {
     confirmButtonText: 'Oui, supprimer!'
   }).then((result) => {
     if (result.isConfirmed) {
-      // If confirmed, proceed with deletion
+      // If confirmed, proceed with delete
       fetch(url + "/" + id, {
         method: "DELETE",
       })
@@ -112,5 +112,16 @@ function searchElements() {
     });
 }
 </script>
+<style scoped>
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-attachment: fixed;
+}
 
-<style scoped></style>
+</style>

@@ -54,7 +54,7 @@
       .then(dataJSON => {
         console.log(dataJSON);
         showSuccessAlert();
-        router.push("/");
+        router.push("/Home");
       })
       .catch((error) => {
         console.error(error);

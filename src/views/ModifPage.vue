@@ -20,7 +20,7 @@
           <input type="text" v-model="localPhoto" class="form-control" id="photo">
         </div>
         <div class="d-flex justify-content-between mb-3">
-          <router-link to="/" class="btn btn-secondary">Annuler</router-link>
+          <router-link to="/Home" class="btn btn-secondary">Annuler</router-link>
           <button type="submit" class="btn btn-primary">Modifier</button>
         </div>
       </form>
@@ -66,7 +66,7 @@
         }).then((result) => {
           if (result.isConfirmed) {
             updateElement(id.value, localNom.value, updatedQte, localPhoto.value);
-            router.push('/');
+            router.push('/Home');
           } else {
             Swal.fire('Mise à jour annulée !', '', 'info');
           }
@@ -91,8 +91,8 @@ function updateElement(id, nom, qte, photo) {
     const url = `https://webmmi.iut-tlse3.fr/~pecatte/frigo/public/2/produits`;
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
-    console.log(id.value)
-    console.log("the body", JSON.stringify({ id, nom, qte, photo }))
+    //console.log(id.value)
+    //console.log("the body", JSON.stringify({ id, nom, qte, photo }))
     const fetchOptions = {
         method: 'PUT',
         headers: myHeaders,
